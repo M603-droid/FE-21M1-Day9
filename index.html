@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bingo</title>
+    <link
+
+      rel="stylesheet"
+
+      href="https://fonts.googleapis.com/css?family=Nunito&display=swap"
+
+    />
+
+    <link rel="stylesheet" type="text/css" href="style.css" />
+
+</head>
+<body>
+    <script src="project.js"></script>
+
+
+    <div id="bingo">
+  
+    </div>
+            <input type="button" value="Random number" onclick="showSelected()">
+
+        <script>
+            let numberblocks = [] ;
+
+            window.onload = function () {
+            let bingo = document.getElementById("bingo");
+
+            let numberOfBlocks = 80;
+            let checkAlphabet;
+            let numbers = 0;
+            for (let i = 0; i < numberOfBlocks; i++) {
+
+
+            let cell = document.createElement("div");
+            cell.classList.add("squareBlock");
+            let number = document.createElement("h3");
+            switch(i){
+                case 0:
+                number.innerText = 'B';
+                checkAlphabet = true;
+                break;
+                case 16:
+                number.innerText = 'I';
+                checkAlphabet = true;
+                break;
+                case 32:
+                number.innerText = 'N';
+                checkAlphabet = true;
+                break;
+                case 48:
+                number.innerText = 'G';
+                checkAlphabet = true;
+                break;
+                case 64:
+                number.innerText = 'O';
+                checkAlphabet = true;
+                break;
+                default:
+                    checkAlphabet = false;
+                
+            
+            }
+            
+
+            
+                    if(!checkAlphabet) {
+                        number.innerText = numbers+1;
+                        numberblocks.push(numbers)
+                        numbers ++;
+                    }
+            cell.appendChild(number)
+            bingo.appendChild(cell)
+
+            }
+            showSelected()
+        }
+
+        const clickMe = function(){
+        
+            let random = Math.floor(Math.random() * 76)
+            showBlock(random)
+ 
+        }
+
+        const showBlock = function (index) {
+            console.log(index)
+
+//let blockToShow = numberblocks[index]; 
+//document.getElementById()
+//document.getElementsByClassName("squareBlock").style.display = "block";
+  //const showSelected = function(event){
+    //not working
+    const heighlightTheBlock = event.currentTarget
+    if (random !== null){
+  random.classList.add("heighlight")
+    } 
+  return bingo
+
+  }
+
+
+        
+        </script>
+        
+       
+            
+       
+</body>
+</html>
+
+
